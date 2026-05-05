@@ -1,7 +1,8 @@
 # Deploy VitePress to GitHub Pages
 #
-# Required once per repo: Settings → Pages → Build and deployment → Source: GitHub Actions
-# (If Source stays "Deploy from a branch", deploy-pages returns 404.)
+# FIRST TIME (pick one):
+# A) UI: Repo → Settings → Pages → Build and deployment → Source → GitHub Actions → Save
+# B) PAT: Add repo secret PAGES_ENABLE_TOKEN (classic PAT, scope: repo). Then enablement runs below.
 
 name: Deploy VitePress site to Pages
 
@@ -34,9 +35,13 @@ jobs:
           node-version: 24
           cache: npm
 
-      # Registers the repo with the Pages API — omitting this commonly causes deploy 404.
+      # Without a Pages site + "GitHub Actions" source, GET /pages returns 404 and this action fails.
+      # Optional secret PAGES_ENABLE_TOKEN (not GITHUB_TOKEN): PAT with `repo` lets enablement: true auto-enable Pages.
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          token: ${{ secrets.PAGES_ENABLE_TOKEN != '' && secrets.PAGES_ENABLE_TOKEN || github.token }}
+          enablement: ${{ secrets.PAGES_ENABLE_TOKEN != '' }}
 
       - name: Install dependencies
         run: npm ci

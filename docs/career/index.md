@@ -1,9 +1,7 @@
-# Career Notes
+---
+date: 2026-05-05
+---
 
-Reflections on **craft**, **pace**, and **sustainability** in a long robotics career. These notes are personal but not confessional: they emphasize habits and tradeoffs that transfer across employers and hardware generations.
+# 커리어 노트
 
-## In this section
-
-- [Long-Term Engineering Roadmap](/career/long-term-roadmap) — principles for depth, writing, health, family, and financial stability over decades.
-
-Writing here complements technical posts: the goal is to keep ambition aligned with reality without losing curiosity.
+로보틱스 커리어에서 **실력**, **속도**, **지속 가능성**을 어떻게 잡을지에 대한 메모이다. 감정 일기가 아니라, 팀과 하드웨어 세대가 바뀌어도 옮겨 갈 수 있는 **습관과 트레이드오프**를 적는다. 기술 글([Tech Logs](/tech-log/))과 짝을 이루되, 여기서는 **야망과 현실을 맞추는 나침반**에 가깝게 쓴다.

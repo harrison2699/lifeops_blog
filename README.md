@@ -3,8 +3,7 @@
 Personal technical blog and portfolio built with **[VitePress](https://vitepress.dev/)** and deployed to **[GitHub Pages](https://pages.github.com/)**.
 
 **Title:** Physical AI Engineering Notes  
-**Focus:** Robotics control, ROS 2, humanoid systems, Physical AI data practices, and long-term engineering notes.  
-**Author:** Harrison Woo
+**Focus:** Robotics control, ROS 2, humanoid systems, Physical AI data practices, and long-term engineering notes.
 
 ## Local development
 
@@ -40,9 +39,10 @@ npm run docs:preview
 This repo is set up as a **project site**: **`harrison2699/lifeops_blog`** → published at **`https://harrison2699.github.io/lifeops_blog/`**. VitePress **`base`** is **`'/lifeops_blog/'`** in `docs/.vitepress/config.mts` (required for project Pages).
 
 1. Push to GitHub on the **`main`** branch (the workflow only listens to `main`).  
-2. Enable Pages: **Settings → Pages → Build and deployment → Source: GitHub Actions** (not “Deploy from a branch”). If this is wrong, the deploy job often fails with **404** / “Failed to create deployment”.  
-3. **`.github/workflows/deploy.yml`** includes **Setup Pages** (`configure-pages`) before upload; without it, deploy can 404 even when the build succeeds.  
-4. First deploy: you may need to **approve** the `github-pages` environment once (**Settings → Environments**).
+2. **Turn on Pages once (required before `configure-pages` can succeed):** open **`https://github.com/harrison2699/lifeops_blog/settings/pages`**, under **Build and deployment** set **Source** to **GitHub Actions**, then **Save**. Until this exists, the REST “get Pages site” call returns **404** and you see errors like *Get Pages site failed* / *Not Found*.  
+3. **Optional automation:** add a repository secret **`PAGES_ENABLE_TOKEN`** (a **classic** personal access token with the **`repo`** scope, not `GITHUB_TOKEN`). The workflow then passes `enablement: true` into `configure-pages` so it can enable Pages via the API (see [configure-pages `enablement`](https://github.com/actions/configure-pages#usage)). Omit the secret if you used step 2 in the browser.  
+4. **`.github/workflows/deploy.yml`** runs **Setup Pages** (`configure-pages`) before upload, then **upload-pages-artifact**, then **deploy-pages**.  
+5. First deploy: you may need to **approve** the **`github-pages`** environment once (**Settings → Environments**).
 
 If you later use a **user** site repo **`harrison2699.github.io`**, change **`base`** to **`'/'`** and update paths in `config.mts` accordingly.
 
@@ -52,7 +52,7 @@ If you later use a **user** site repo **`harrison2699.github.io`**, change **`ba
 2. **Publish cleaned public notes** — redact identifiers, internal URLs, and unreleased roadmap details.  
 3. **Avoid** internal source code dumps, secrets, API keys, customer names, unreleased product specifics, and patent-sensitive or export-controlled material. When unsure, do not publish.  
 4. **Weekly Tech Logs** — short, dated entries under `docs/tech-log/<year>/`.  
-5. **Monthly articles** — promote one or two strong threads from logs into `docs/articles/...` with diagrams and clearer structure.
+5. **Monthly polish** — promote one or two strong threads from logs into longer notes (same site structure you choose) with diagrams and clearer structure.
 
 ## Recommended weekly routine
 
@@ -60,19 +60,18 @@ If you later use a **user** site repo **`harrison2699.github.io`**, change **`ba
 | --- | --- |
 | **Friday (30–45 min)** | Close the week: Tech Log entry (`Summary` through `Next Actions`). |
 | **Weekend (optional)** | Fix one broken link or stale paragraph on an older page. |
-| **Month end (1–2 hours)** | Pick a log thread → outline → draft article in the right category. |
+| **Month end (1–2 hours)** | Pick a log thread → outline → expand into a clearer public note if it deserves permanence. |
 
 ## Project layout
 
 ```text
 docs/
   index.md              # Home
-  about.md
+  physical-ai-map.md    # Physical AI map + timeline + Connected Papers card
   tech-log/             # Weekly logs
-  articles/             # Long-form, by category
-  projects/             # Portfolio pages
   career/               # Career reflections
   reading/              # Papers & references
+  public/               # Static assets (e.g. hero.png)
   .vitepress/config.mts # Site config (nav, sidebar, theme)
 ```
 

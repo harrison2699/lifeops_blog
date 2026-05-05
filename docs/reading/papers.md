@@ -1,3 +1,7 @@
+---
+date: 2026-05-05
+---
+
 # Papers
 
 Use the template below for new entries. Keep each section tight; link the canonical PDF or DOI when stable.

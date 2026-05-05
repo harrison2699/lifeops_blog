@@ -1,48 +1,79 @@
 ---
 layout: home
+date: 2026-05-05
+pageClass: site-home
 
 hero:
   name: Physical AI Engineering Notes
-  text: Robotics, ROS 2, and Long-Term Systems
-  tagline: Robotics Control, ROS 2, Humanoid Systems, and Long-Term Engineering Notes
+  text: 로보틱스 · ROS 2 · Physical AI
+  tagline: 제어·조작·시스템을 다루는 실무 노트—다음 하드웨어 세대가 바뀌어도 읽을 가치가 남도록 쓴다.
+  image:
+    src: /hero.png
+    alt: Physical AI Engineering Notes hero image
   actions:
     - theme: brand
       text: Tech Logs
       link: /tech-log/
     - theme: alt
-      text: Articles
-      link: /articles/
+      text: Physical AI Map
+      link: /physical-ai-map
     - theme: alt
-      text: Projects
-      link: /projects/
+      text: Career
+      link: /career/
+    - theme: alt
+      text: Reading
+      link: /reading/
 
 features:
-  - title: Robotics Control
-    details: Whole-body coordination, model-based and learning-backed controllers, and safe interaction with unstructured environments.
-  - title: ROS 2 Systems
-    details: Nodes, executors, lifecycle, DDS concerns, and integration patterns for fieldable robot software.
-  - title: Humanoid Manipulation
-    details: Contact-rich tasks, dexterous planning, and closing the loop from perception to reliable execution.
-  - title: Physical AI Data Pipelines
-    details: Logging, labeling, simulation-to-real workflows, and datasets that respect real-world constraints.
-  - title: Long-Term Engineering Career
-    details: Depth over hype, reproducible notes, and systems that remain understandable years later.
+  - icon: 🦾
+    title: 로보틱스 제어
+    details: 전신 조율, 모델 기반·학습 기반 제어기, 비정형 환경에서의 안전한 상호작용.
+  - icon: 🧩
+    title: ROS 2 시스템
+    details: 노드·executor·lifecycle, DDS 이슈, 현장 소프트웨어를 위한 통합 패턴.
+  - icon: 🖐️
+    title: 휴머노이드 조작
+    details: 접촉이 많은 작업, 손재주 있는 계획, 지각에서 실행까지 루프를 닫기.
+  - icon: 📡
+    title: Physical AI 데이터
+    details: 로깅·라벨링, 시뮤→실제 워크플로, 현실 제약을 반영한 데이터셋.
 ---
 
-## Welcome
+<div class="home-landing">
 
-I am **Harrison Woo**, a robotics software engineer. This site collects working notes, public write-ups, and project summaries at the intersection of **robot control**, **ROS 2**, **manipulation**, and **Physical AI** systems.
+## 👋 환영합니다
 
-I use it as a **long-term engineering archive**: a place where weekly logs, deeper articles, and career reflections can accumulate without losing structure.
+이 사이트는 **로봇 제어**, **ROS 2**, **조작**, **Physical AI**가 만나는 지점에서 쌓은 **실험·정리·공개 글**을 모아 둔다.
 
-### Explore
+**장기 엔지니어링 아카이브**로 쓴다—주간 로그와 커리어 메모가 **구조를 잃지 않고** 쌓이게 하는 공간이다.
 
-- **[Tech Logs](/tech-log/)** — concise weekly records of problems, fixes, and lessons.
-- **[Articles](/articles/)** — longer technical pieces organized by topic.
-- **[Projects](/projects/)** — portfolio-style summaries of significant work.
+### ✨ 둘러보기
 
-For background and how I think about the craft, see **[About](/about)**. For books, papers, and references, see **[Reading](/reading/)** and **[Career](/career/)** notes.
+<div class="home-landing__grid home-landing__grid--four">
+  <a class="home-landing__tile" href="/physical-ai-map">
+    <span class="home-landing__tile-emoji" aria-hidden="true">🗺️</span>
+    <span class="home-landing__tile-title">Physical AI Map</span>
+    <span class="home-landing__tile-desc">마인드맵, 타임라인, 외부 논문 링크</span>
+  </a>
+  <a class="home-landing__tile" href="/tech-log/">
+    <span class="home-landing__tile-emoji" aria-hidden="true">📓</span>
+    <span class="home-landing__tile-title">Tech Logs</span>
+    <span class="home-landing__tile-desc">짧은 날짜별 기록—무엇이 깨졌고 무엇이 남았는지</span>
+  </a>
+  <a class="home-landing__tile" href="/reading/">
+    <span class="home-landing__tile-emoji" aria-hidden="true">📚</span>
+    <span class="home-landing__tile-title">Reading</span>
+    <span class="home-landing__tile-desc">주장 뒤에 둔 논문·참고 자료</span>
+  </a>
+  <a class="home-landing__tile" href="/career/">
+    <span class="home-landing__tile-emoji" aria-hidden="true">🧭</span>
+    <span class="home-landing__tile-title">Career</span>
+    <span class="home-landing__tile-desc">속도, 습관, 오래 버티는 엔지니어링</span>
+  </a>
+</div>
 
-### Archive statement
+### 🎯 이 아카이브가 지향하는 것
 
-These pages are written for clarity over time. They favor honest tradeoffs, reproducible reasoning, and material that will still be useful after the next hardware generation ships.
+**솔직한 트레이드오프**, 재현 가능한 추론, 그리고 **다음 로봇이 출고된 뒤에도** 도움이 되는 글을 우선한다.
+
+</div>

@@ -16,9 +16,11 @@ function isGitAvailable(): boolean {
 // - Project site (repo name: anything else): use base: '/<repo-name>/'
 //   Example: base: '/my-blog/', trailing slash recommended.
 export default defineConfig({
+  // Default dark; users can still switch with the theme toggle (when not force-dark).
+  appearance: 'dark',
   title: 'Physical AI Engineering Notes',
   description:
-    'Robotics Control, ROS 2, Humanoid Systems, and Long-Term Engineering Notes — Harrison Woo',
+    'Robotics Control, ROS 2, Humanoid Systems, and Long-Term Engineering Notes.',
   lang: 'en-US',
   // Project Pages: https://<user>.github.io/<repo>/ → base must be '/<repo>/'
   // User/org site (<user>.github.io repo): use base: '/'
@@ -29,54 +31,52 @@ export default defineConfig({
     siteTitle: 'Physical AI Engineering Notes',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'About', link: '/about' },
+      { text: 'Physical AI Map', link: '/physical-ai-map' },
       { text: 'Tech Logs', link: '/tech-log/' },
-      { text: 'Articles', link: '/articles/' },
-      { text: 'Projects', link: '/projects/' },
       { text: 'Career', link: '/career/' },
       { text: 'Reading', link: '/reading/' },
     ],
     sidebar: {
+      '/physical-ai-map': [
+        {
+          text: 'Physical AI',
+          items: [{ text: 'Map & timeline', link: '/physical-ai-map' }],
+        },
+      ],
       '/tech-log/': [
         {
           text: 'Tech Logs',
           items: [
             { text: 'Overview', link: '/tech-log/' },
-            { text: '2026-W18', link: '/tech-log/2026/2026-w18' },
-          ],
-        },
-      ],
-      '/articles/': [
-        {
-          text: 'Articles',
-          items: [
-            { text: 'Overview', link: '/articles/' },
-            { text: 'Robotics Control', link: '/articles/robotics-control/' },
-            { text: 'ROS 2', link: '/articles/ros2/' },
-            { text: 'Physical AI', link: '/articles/physical-ai/' },
-            { text: 'System Engineering', link: '/articles/system-engineering/' },
-          ],
-        },
-      ],
-      '/projects/': [
-        {
-          text: 'Projects',
-          items: [
-            { text: 'Overview', link: '/projects/' },
-            { text: 'AI Worker', link: '/projects/ai-worker' },
-            { text: 'Cyclo Framework', link: '/projects/cyclo-framework' },
-            { text: 'Robot Control', link: '/projects/robot-control' },
-            { text: 'Data Pipeline', link: '/projects/data-pipeline' },
+            {
+              text: 'Network Basic',
+              collapsed: true,
+              items: [
+                { text: 'Section overview', link: '/tech-log/network-basic/' },
+                { text: 'Chapter 1', link: '/tech-log/network-basic/chapter-01' },
+              ],
+            },
+            {
+              text: 'Imitation Learning',
+              collapsed: true,
+              items: [
+                { text: 'Section overview', link: '/tech-log/imitation-learning/' },
+              ],
+            },
+            {
+              text: 'Reinforcement Learning',
+              collapsed: true,
+              items: [
+                { text: 'Section overview', link: '/tech-log/reinforcement-learning/' },
+              ],
+            },
           ],
         },
       ],
       '/career/': [
         {
           text: 'Career Notes',
-          items: [
-            { text: 'Overview', link: '/career/' },
-            { text: 'Long-Term Roadmap', link: '/career/long-term-roadmap' },
-          ],
+          items: [{ text: '개요', link: '/career/' }],
         },
       ],
       '/reading/': [
@@ -95,13 +95,10 @@ export default defineConfig({
     search: {
       provider: 'local',
     },
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/harrison2699' },
-      { icon: 'linkedin', link: 'https://www.linkedin.com/in/harrison-woo' },
-    ],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/harrison2699' }],
     footer: {
       message: 'Built as a long-term engineering archive.',
-      copyright: 'Copyright © Harrison Woo',
+      copyright: 'Copyright © Physical AI Engineering Notes',
     },
     editLink: {
       pattern: 'https://github.com/harrison2699/lifeops_blog/edit/main/docs/:path',
