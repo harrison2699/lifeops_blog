@@ -20,8 +20,9 @@ export default defineConfig({
   description:
     'Robotics Control, ROS 2, Humanoid Systems, and Long-Term Engineering Notes — Harrison Woo',
   lang: 'en-US',
-  // Repository: harrison-woo.github.io (user GitHub Pages) → root base
-  base: '/',
+  // Project Pages: https://<user>.github.io/<repo>/ → base must be '/<repo>/'
+  // User/org site (<user>.github.io repo): use base: '/'
+  base: '/lifeops_blog/',
   srcDir: '.',
   lastUpdated: isGitAvailable(),
   themeConfig: {
@@ -95,7 +96,7 @@ export default defineConfig({
       provider: 'local',
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/harrison-woo' },
+      { icon: 'github', link: 'https://github.com/harrison2699' },
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/harrison-woo' },
     ],
     footer: {
@@ -103,7 +104,7 @@ export default defineConfig({
       copyright: 'Copyright © Harrison Woo',
     },
     editLink: {
-      pattern: 'https://github.com/harrison-woo/harrison-woo.github.io/edit/main/docs/:path',
+      pattern: 'https://github.com/harrison2699/lifeops_blog/edit/main/docs/:path',
       text: 'Edit this page on GitHub',
     },
   },

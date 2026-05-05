@@ -37,14 +37,14 @@ npm run docs:preview
 
 ## Deployment (GitHub Pages)
 
-This repository is intended to be **`harrison-woo.github.io`** (user GitHub Pages), so VitePress `base` is set to **`/`** in `docs/.vitepress/config.mts`.
+This repo is set up as a **project site**: **`harrison2699/lifeops_blog`** → published at **`https://harrison2699.github.io/lifeops_blog/`**. VitePress **`base`** is **`'/lifeops_blog/'`** in `docs/.vitepress/config.mts` (required for project Pages).
 
-1. Push this project to GitHub on the **`main`** branch.  
+1. Push to GitHub on the **`main`** branch (the workflow only listens to `main`).  
 2. Enable Pages: **Settings → Pages → Build and deployment → Source: GitHub Actions**.  
-3. The workflow **`.github/workflows/deploy.yml`** builds on every push to `main` and on **manual** `workflow_dispatch` runs.  
-4. First deploy may require approving the `github-pages` environment once.
+3. **`.github/workflows/deploy.yml`** runs on every push to `main` and via **Actions → Run workflow**.  
+4. First deploy: you may need to **approve** the `github-pages` environment once (**Settings → Environments**).
 
-If you instead use a **project** site (repo name not `<user>.github.io`), set `base` to `'/<repo-name>/'` (with trailing slash) in `docs/.vitepress/config.mts`, and align the workflow if you use a non-default branch.
+If you later use a **user** site repo **`harrison2699.github.io`**, change **`base`** to **`'/'`** and update paths in `config.mts` accordingly.
 
 ## Writing workflow
 
