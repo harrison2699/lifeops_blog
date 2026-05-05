@@ -1,0 +1,14 @@
+{
+  "name": "physical-ai-engineering-notes",
+  "type": "module",
+  "private": true,
+  "description": "Personal technical blog and portfolio — VitePress on GitHub Pages",
+  "scripts": {
+    "docs:dev": "vitepress dev docs --port 5174",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  }
+}
