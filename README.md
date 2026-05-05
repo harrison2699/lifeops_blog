@@ -40,8 +40,8 @@ npm run docs:preview
 This repo is set up as a **project site**: **`harrison2699/lifeops_blog`** → published at **`https://harrison2699.github.io/lifeops_blog/`**. VitePress **`base`** is **`'/lifeops_blog/'`** in `docs/.vitepress/config.mts` (required for project Pages).
 
 1. Push to GitHub on the **`main`** branch (the workflow only listens to `main`).  
-2. Enable Pages: **Settings → Pages → Build and deployment → Source: GitHub Actions**.  
-3. **`.github/workflows/deploy.yml`** runs on every push to `main` and via **Actions → Run workflow**.  
+2. Enable Pages: **Settings → Pages → Build and deployment → Source: GitHub Actions** (not “Deploy from a branch”). If this is wrong, the deploy job often fails with **404** / “Failed to create deployment”.  
+3. **`.github/workflows/deploy.yml`** includes **Setup Pages** (`configure-pages`) before upload; without it, deploy can 404 even when the build succeeds.  
 4. First deploy: you may need to **approve** the `github-pages` environment once (**Settings → Environments**).
 
 If you later use a **user** site repo **`harrison2699.github.io`**, change **`base`** to **`'/'`** and update paths in `config.mts` accordingly.
